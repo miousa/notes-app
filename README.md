@@ -22,7 +22,7 @@ Ideal for those who want to quickly write down important thoughts without being 
 ## 🚀 Launch
 
 1. Clone the repository  
-   `git clone https://github.com/YOUR_LOGIN/notes-app.git`  
+   `git clone https://github.com/miousa/notes-app.git`  
    `cd notes-app`
 
 2. Run the program  
@@ -76,4 +76,4 @@ The project was created for educational purposes.
 You are free to use and modify it.
 
 👤 Author
-[YOUR NAME] — @YOUR_LOGIN
+[YOUR NAME] — miousa
