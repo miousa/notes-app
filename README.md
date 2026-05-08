@@ -76,4 +76,4 @@ The project was created for educational purposes.
 You are free to use and modify it.
 
 👤 Author
-[YOUR NAME] — miousa
+[YOUR NAME] — @miousa
