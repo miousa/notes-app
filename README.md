@@ -54,13 +54,13 @@ Example:
     {"note": "Buy milk", "date": "2025-03-15"},
     {"note": "Call mom", "date": "2025-04-20"}
 ]
-🗂️ Project structure
+## 🗂️ Project structure
 text
 notes-app/
 ├── notes.py          # main script
 ├── notes.json        # notes file (created automatically)
 └── README.md         # this file
-🔮 Ideas for improvement
+## 🔮 Ideas for improvement
 Editing notes
 
 Search by text
@@ -71,9 +71,9 @@ Export to TXT / CSV
 
 Set reminders
 
-📝 License
+## 📝 License
 The project was created for educational purposes.
 You are free to use and modify it.
 
-👤 Author
+## 👤 Author
 [YOUR NAME] — @miousa
