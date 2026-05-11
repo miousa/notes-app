@@ -56,12 +56,12 @@ Example:
 ]
 ```
 ## 🗂️ Project structure
-text
+```
 notes-app/
 ├── notes.py          # main script
 ├── notes.json        # notes file (created automatically)
 └── README.md         # this file
-
+```
 ## 🔮 Ideas for improvement
 Editing notes
 
