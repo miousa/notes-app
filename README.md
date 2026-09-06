@@ -20,6 +20,7 @@ Ideal for those who want to quickly write down important thoughts without being 
 - Built-in `datetime` library (for future improvements)
 
 ## 🚀 Launch
+First, follow the link and install git on your computer: https://git-scm.com/download/win.
 
 1. Clone the repository  
    `git clone https://github.com/miousa/notes-app.git`  
@@ -34,15 +35,19 @@ Ideal for those who want to quickly write down important thoughts without being 
 
 After launch, the menu appears:
 
-1. ➕ Add note  
-2. 📋 Show all notes  
-3. ❌ Delete note  
-4. 🚪 Exit  
+1. ➕ Add note
+2. 📋 Show all notes
+3. ❌ Delete note
+4. 🔍 Search note
+5. ✏️ Edit note
+6. 💾 Save & Exit 
 
-- **Adding** — enter the note text, then year, month (number or name in English) and day.  
-- **Viewing** — displays a list of all notes with numbers and dates.  
-- **Deleting** — you will see a list of notes, enter the number and confirm deletion.  
-- **Saving** occurs automatically when adding, deleting and before exiting.
+- **Adding** — enter the note text, then specify the year, month (as a number or English name) and day.
+- **Viewing** — displays a list of all saved notes with their numbers and dates.
+- **Deleting** — shows the list of notes, then you enter the number of the note to delete and confirm the action.
+- **Searching** — allows you to find notes by text, date, or tag.
+- **Editing** — lets you change the text, date, or tag of an existing note.
+- **Saving** — happens automatically when adding, deleting, editing, and before exiting the program.
 
 ## 📁 Storage format
 
@@ -51,8 +56,16 @@ Example:
 
 ```json
 [
-    {"note": "Buy milk", "date": "2025-03-15"},
-    {"note": "Call mom", "date": "2025-04-20"}
+  {
+    "note": "Buy Milk",
+    "date": "2026-09-06",
+    "tag": "General"
+  },
+  {
+    "note": "KickFlip",
+    "date": "2026-09-06",
+    "tag": "Procces..."
+  }
 ]
 ```
 ## 🗂️ Project structure
@@ -63,15 +76,15 @@ notes-app/
 └── README.md         # this file
 ```
 ## 🔮 Ideas for improvement
-Editing notes
-
-Search by text
+Add External API
 
 Sort by date
 
 Export to TXT / CSV
 
 Set reminders
+
+and more ...
 
 ## 📝 License
 The project was created for educational purposes.
