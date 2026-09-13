@@ -19,7 +19,7 @@ def load_notes():
             # Convert old format (list of strings) to new format
             if data and isinstance(data[0], str):
                 return [{"note": item, "date": "Date unknown", "tag": "Unknown"} for item in data]
-            
+
             return data
     except (FileNotFoundError, json.JSONDecodeError):
         return []
@@ -50,7 +50,7 @@ def questions():
 1. Return menu.
 2. Continue here.
 3. Close programm.
-          """) 
+          """)
     choice = input("Choose: ").strip()
     if choice == "1":
         return True
@@ -61,7 +61,7 @@ def questions():
     else:
         print("Choose 1, 2, or 3.")
         return questions()
-    
+
 def show_menu():
     print("\n" + "=" * 20)
     print("NOTES")
@@ -96,7 +96,7 @@ def add_note(notes):
             print("\nAvailable months:")
             for eng, num in MONTHS.items():
                 print(f"  {eng} → {num}")
-        
+
             month_input = input("Month (01-12 or name in English): ").strip().lower()
 
             if not month_input:
@@ -117,7 +117,7 @@ def add_note(notes):
             if not (day.isdigit() and 1 <= int(day) <= 31):
                 print("Invalid day. Note not added.")
                 continue
-        
+
             day = f"{int(day):02d}"
             date = f"{year}-{month}-{day}"
             break
@@ -126,7 +126,7 @@ def add_note(notes):
         if not tag_note:
             print("You haven't entered anything, so the tag is marked as - General")
             tag_note = "General"
-            
+
         notes.append({"note": note, "date": date, "tag": tag_note})
         save_notes(notes)
         print("Note added and saved.")
@@ -136,7 +136,7 @@ def add_note(notes):
             return
         elif not result:
             continue
-                
+        
 def delete_note(notes):
     while True:
         if not notes:
@@ -148,10 +148,10 @@ def delete_note(notes):
             elif not result:
                 print("There are no notes. Return to menu.")
                 return
-                
+
         show_notes(notes)
         print()
-    
+
         while True:
             try:
                 num = input(f"Number of note to delete (or 'q' to quit): ")
@@ -174,7 +174,7 @@ def delete_note(notes):
                 else:
                     print("Deletion canceled.")
                     break
-                       
+
             else:
                 print(f"Incorrect number. Repeat!")
                 continue
@@ -184,7 +184,7 @@ def delete_note(notes):
             return
         elif not result:
             continue
-                  
+
 def search_note(notes):
     while True:
         print("\n--- SEARCH MENU ---")
@@ -208,7 +208,7 @@ def search_note(notes):
             if not choice.isdigit():
                 print("Enter a number!")
                 continue
-            
+
             if choice == "1":
                 request = input("Enter keyword: ").lower().strip()
 
@@ -251,13 +251,13 @@ def search_note(notes):
                     note = notes[i-1]
                     print(f"{i}. {note['note']} — {note['date']}. Tag: {note['tag']}")
                 break
-                    
+
         result = questions()
         if result:
             return
         elif not result:
             continue
-        
+
 def edit_note(notes):
     while True:
         if not notes:
@@ -281,7 +281,7 @@ def edit_note(notes):
                 print("Invalid note number.")
             else:
                 break
-        
+
         print("\n--- EDIT MENU ---")
         print("1. Edit text")
         print("2. Edit date")
@@ -289,14 +289,14 @@ def edit_note(notes):
         print()
 
         choice = input("Choose: ")
-        
+
         if choice == "1":
             text_edit = input("Enter text: ")
 
             if not text_edit:
                 print("Note text cannot be empty.")
                 return
-            
+
             notes[ind_edit - 1]['note'] = text_edit
             save_notes(notes)
             print("Note updated.")
@@ -308,12 +308,12 @@ def edit_note(notes):
                 if not date_edit:
                     print("Date cannot be empty")
                     continue
-                
+
                 if 1 <= len(date_edit) <= 10 and date_edit[4] == '-' and date_edit[7] == '-':
                     notes[ind_edit - 1]['date'] = date_edit
                     save_notes(notes)
                     print("Note update")
-                
+
                 else:
                     print("Invalid date. Repeat.")
 
@@ -323,7 +323,7 @@ def edit_note(notes):
             if not tag_edit:
                 print("Tag cannot be empty")
                 return
-            
+
             notes[ind_edit - 1]['tag'] = tag_edit
             save_notes(notes)
             print("Note update")
@@ -362,5 +362,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
