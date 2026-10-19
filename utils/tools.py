@@ -1,37 +1,24 @@
-NOTES_FILE = "notes.json"
+import datetime as dt
+from supporting import MONTHS
 
-MONTHS = {
-    "january": "01",
-    "february": "02",
-    "march": "03",
-    "april": "04",
-    "may": "05",
-    "june": "06",
-    "july": "07",
-    "august": "08",
-    "september": "09",
-    "october": "10",
-    "november": "11",
-    "december": "12",
-}
-
-show_menu = f"""
-\n{"=" * 20}
-NOTES
-{"=" * 20}
-1. Add note
-2. Show all notes
-3. Delete note
-4. Search note
-5. Edit note
-6. Exit
-{"-" * 20}
-"""
+today = dt.datetime.today()
 
 
-search_menu = """ 
-\n--- SEARCH MENU ---
-1. Search by text 
-2. Search by date
-3. Search by tag 
-"""
+def input_data() -> tuple:
+    note = input("Enter note: ").strip()
+    if not note:
+        print("Note can't be emptyed")
+
+    tag_note = input("Enter note tag: ").strip()
+    if not tag_note:
+        print("You haven't entered anything, so the tag is marked as - General")
+        tag_note = "General"
+
+    date = str(today)[:10]
+    dotw = today.strftime("%A")  # Day of the week
+    autumn = today.strftime("%B")
+
+    return (note, tag_note, date, dotw, autumn)
+
+
+print(input_data())
